@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "outDir": "build/app",
     "target": "es5",
     "module": "system",
     "moduleResolution": "node",
@@ -10,7 +11,8 @@
     "noImplicitAny": false
   },
   "exclude": [
-    "node_modules",
+    "gulpfile.ts",
+    "node_modules/",
     "typings/main",
     "typings/main.d.ts"
   ]

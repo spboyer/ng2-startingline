@@ -24,6 +24,11 @@
     "concurrently": "^2.0.0",
     "lite-server": "^2.2.0",
     "typescript": "^1.8.9",
-    "typings":"^0.7.12"
+    "typings":"^0.7.12",
+    "del": "^2.2.0",
+    "gulp": "^3.9.1",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-tslint": "^4.3.3",
+    "gulp-typescript": "^2.12.0"
   }
 }
