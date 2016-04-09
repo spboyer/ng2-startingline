@@ -30,7 +30,7 @@ gulp.task("compile", ["tslint"], () => {
     let tsResult = gulp.src("src/**/*.ts")
         .pipe(sourcemaps.init())
         .pipe(tsc(tsProject));
-    return tsResult.js
+    return tsResult
         .pipe(sourcemaps.write("."))
         .pipe(gulp.dest("build"));
 });
@@ -38,10 +38,16 @@ gulp.task("compile", ["tslint"], () => {
 /**
  * Copy all resources that are not TypeScript files into build directory.
  */
-gulp.task("resources", () => {
+gulp.task("resources", ["server"], () => {
     return gulp.src(["src/**/*", "!**/*.ts"])
         .pipe(gulp.dest("build"));
 });
+
+gulp.task("server", () => {
+    return gulp.src(["index.js", "package.json"], { cwd: "src/server/**"})
+        .pipe(gulp.dest("build"));
+});
+
 
 /**
  * Copy all required libraries into build directory.

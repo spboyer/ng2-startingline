@@ -1,5 +1,5 @@
 {
-  "name": "angular2-quickstart",
+  "name": "ng2-startingline",
   "version": "1.0.0",
   "scripts": {
     "start": "tsc && concurrently \"npm run tsc:w\" \"npm run lite\" ",
@@ -11,7 +11,7 @@
     "docker": "npm run docker-build && docker run -it --rm -p 3000:3000 -p 3001:3001 ng2-quickstart",
     "postinstall": "typings install"
   },
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "angular2": "2.0.0-beta.14",
     "systemjs": "0.19.25",
