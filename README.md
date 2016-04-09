@@ -34,4 +34,44 @@ with excellent support for Angular apps that use routing.
 * `npm run typings` - runs the typings tool.
 * `npm run postinstall` - called by *npm* automatically *after* it successfully completes package installation. This script installs the TypeScript definition files this app requires.
 
-### Building
+### Building Files
+
+```
+gulp clean
+gulp build
+```
+
+Uses gulp to transpile the Angular application, moves the _needed_ application files and dependencies to the `build` folder.
+
+```
+├─build
+├── app
+│   ├── app.component.js
+│   ├── app.component.js.map
+│   ├── main.js
+│   └── main.js.map
+├── index.html
+├── index.js
+├── lib
+│   ├── angular2
+│   │   ├── bundles
+│   │   │   ├── angular2-polyfills.js
+│   │   │   ├── angular2.dev.js
+│   │   │   └── router.dev.js
+│   │   └── es6
+│   │       └── dev
+│   │           └── src
+│   │               └── testing
+│   │                   └── shims_for_IE.js
+│   ├── es6-shim
+│   │   └── es6-shim.min.js
+│   ├── rxjs
+│   │   └── bundles
+│   │       └── Rx.js
+│   └── systemjs
+│       └── dist
+│           ├── system-polyfills.js
+│           └── system.src.js
+├── package.json
+└── styles.css
+```

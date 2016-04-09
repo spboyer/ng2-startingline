@@ -39,7 +39,7 @@ gulp.task("compile", ["tslint"], () => {
  * Copy all resources that are not TypeScript files into build directory.
  */
 gulp.task("resources", ["server"], () => {
-    return gulp.src(["src/**/*", "!**/*.ts"])
+    return gulp.src(["src/**/*", "!**/*.ts", "!src/server", "!src/server/**"])
         .pipe(gulp.dest("build"));
 });
 
