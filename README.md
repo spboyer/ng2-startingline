@@ -6,10 +6,9 @@ Template based on https://github.com/angular/starter, added gulp build process.
 * node.js >= 4.x
 * gulp and gulp-cli
 * typescript
-* ts-node
 
 ```
-npm install -g typescript ts-node gulp gulp-cli
+npm install -g typescript gulp gulp-cli
 ```
 
 ### Start development
