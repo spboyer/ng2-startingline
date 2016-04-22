@@ -40,6 +40,13 @@ gulp clean
 npm run build
 ```
 
+This will build the application into the **/build** folder.  In order to run locally using the node.js server
+
+```
+cd build
+node index.js
+```
+
 Uses gulp to transpile the Angular application, moves the _needed_ application files and dependencies to the `build` folder.
 
 ```
