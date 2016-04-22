@@ -13,7 +13,8 @@
     "tsc": "tsc",
     "tsc:w": "tsc -w",
     "typings": "typings",
-    "webdriver:update": "webdriver-manager update"
+    "webdriver:update": "webdriver-manager update",
+    "build": "tsc && gulp"
   },
   "keywords": [],
   "author": "",
@@ -44,7 +45,8 @@
     "typescript": "^1.8.10",
     "typings":"^0.7.12",
     "gulp" : "3.9.1",
-    "gulp-sourcemaps": "2.0.0-alpha"
+    "gulp-sourcemaps": "2.0.0-alpha",
+    "del" : "2.2.0"
   },
   "repository": {  }
 }

@@ -13,12 +13,22 @@ gulp.task('clean', function (cb) {
 /**
  * Copy all resources that are not TypeScript files into build directory.
  */
-gulp.task("resources", ["server"], function () {
-    return gulp.src(["src/**/*", "!**/*.ts", "!src/server", "!src/server/**"])
+gulp.task("resources", ["server", "app", "assets"], function () {
+    console.log("Building resources...");
+});
+
+gulp.task("app", function(){
+    return gulp.src(["app/**", "!app/**/*.ts", "!app/**", "index.html"])
+        .pipe(gulp.dest("build"));
+})
+
+gulp.task("server", function () {
+    return gulp.src(["index.js", "package.json"], { cwd: "server/**" })
         .pipe(gulp.dest("build"));
 });
-gulp.task("server", function () {
-    return gulp.src(["index.js", "package.json"], { cwd: "src/server/**" })
+
+gulp.task("assets", function(){
+    return gulp.src(["styles.css"])
         .pipe(gulp.dest("build"));
 });
 /**
@@ -35,7 +45,7 @@ gulp.task("libs", function () {
         'angular2/bundles/angular2.dev.js',
         'angular2/bundles/router.dev.js'
     ], { cwd: "node_modules/**" }) /* Glob required here. */
-        .pipe(gulp.dest("build/lib"));
+        .pipe(gulp.dest("build/node_modules"));
 });
 /**
  * Build the project.

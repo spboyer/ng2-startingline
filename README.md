@@ -37,7 +37,7 @@ with excellent support for Angular apps that use routing.
 
 ```
 gulp clean
-gulp build
+npm run build
 ```
 
 Uses gulp to transpile the Angular application, moves the _needed_ application files and dependencies to the `build` folder.
@@ -51,7 +51,7 @@ Uses gulp to transpile the Angular application, moves the _needed_ application f
 │   └── main.js.map
 ├── index.html
 ├── index.js
-├── lib
+├── node_modules
 │   ├── angular2
 │   │   ├── bundles
 │   │   │   ├── angular2-polyfills.js
