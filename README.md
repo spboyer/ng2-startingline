@@ -1,3 +1,5 @@
+Checkout blog post for this here: http://www.tattoocoder.com/angular-2-getting-off-the-starting-line/
+
 # ng2-startingline
 Template based on https://github.com/angular/starter, added gulp build process.
 
