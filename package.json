@@ -14,7 +14,8 @@
     "tsc:w": "tsc -w",
     "typings": "typings",
     "webdriver:update": "webdriver-manager update",
-    "build": "tsc && gulp"
+    "build": "tsc && gulp",
+    "prod": "npm run build && cd build && npm i && node index.js"
   },
   "keywords": [],
   "author": "",
