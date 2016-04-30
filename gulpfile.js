@@ -16,17 +16,22 @@ gulp.task('clean', function (cb) {
 gulp.task("resources", ["server", "app", "assets"], function () {
     console.log("Building resources...");
 });
-
-gulp.task("app", function(){
-    return gulp.src(["app/**", "!app/**/*.ts", "!app/**", "index.html"])
+/* copy the app core files to the build folder */
+gulp.task("app", ['index'], function(){
+    return gulp.src(["app/**", "!app/**/*.ts"])
+        .pipe(gulp.dest("build/app"));
+});
+/* get the index file to the root of the build */
+gulp.task("index", function(){
+    return gulp.src(["index.html"])
         .pipe(gulp.dest("build"));
-})
-
+});
+/* copy node server to build folder */
 gulp.task("server", function () {
     return gulp.src(["index.js", "package.json"], { cwd: "server/**" })
         .pipe(gulp.dest("build"));
 });
-
+/* styles and other assets */
 gulp.task("assets", function(){
     return gulp.src(["styles.css"])
         .pipe(gulp.dest("build"));
