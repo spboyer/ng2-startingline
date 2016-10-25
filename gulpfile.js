@@ -23,7 +23,7 @@ gulp.task("app", ['index'], function(){
 });
 /* get the index file to the root of the build */
 gulp.task("index", function(){
-    return gulp.src(["index.html"])
+    return gulp.src(["index.html", "systemjs.config.js"])
         .pipe(gulp.dest("build"));
 });
 /* copy node server to build folder */
@@ -41,14 +41,11 @@ gulp.task("assets", function(){
  */
 gulp.task("libs", function () {
     return gulp.src([
-        'es6-shim/es6-shim.min.js',
-        'systemjs/dist/system-polyfills.js',
-        'angular2/bundles/angular2-polyfills.js',
-        'angular2/es6/dev/src/testing/shims_for_IE.js',
-        'systemjs/dist/system.src.js',
-        'rxjs/bundles/Rx.js',
-        'angular2/bundles/angular2.dev.js',
-        'angular2/bundles/router.dev.js'
+        'core-js/client/shim.min.js',
+        'reflect-metadata/Reflect.js',
+        'zone.js/**',
+        '@angular/**',
+        'rxjs/**'
     ], { cwd: "node_modules/**" }) /* Glob required here. */
         .pipe(gulp.dest("build/node_modules"));
 });
